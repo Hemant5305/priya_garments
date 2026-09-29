@@ -12,35 +12,47 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600&display=swap"
         rel="stylesheet">
+        <script>document.documentElement.classList.add('js')</script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header id="siteHeader">
-        <a href="#top" class="mark">
-            <span class="mono">PG</span>
-            <span class="name">PRIYA GARMENTS<small>ESTD. 2013</small></span>
-        </a>
-        <nav class="links">
-            <a href="#about">About</a>
-            <a href="#collections" data-open>Collections</a>
-            <a href="#visit">Visit Us</a>
-        </nav>
-        <button class="burger" id="burger" aria-label="Menu"
-            aria-expanded="false"><span></span><span></span><span></span></button>
-    </header>
+    <a href="#top" class="mark">
+        <span class="mono">PG</span>
+        <span class="name">PRIYA GARMENTS<small>ESTD. 2013</small></span>
+    </a>
+    <nav class="links">
+        <a href="#about">About</a>
+        <a href="#collections">Collections</a>
+        <a href="#visit">Visit Us</a>
+    </nav>
+    <a href="tel:+919728374241" class="nav-cta">Call Now</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-controls="mobileMenu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="progress" id="progress"></div>
+</header>
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about">About</a>
         <a href="#collections" data-open>Collections</a>
         <a href="#visit">Visit Us</a>
+        <a href="tel:+919728374241">Call Us</a>
     </div>
 
-    <main id="top">
+        <main id="top">
 
         <section class="hero">
-            <div class="eyebrow">CLOTHING · ACCESSORIES · ESTD. 2013</div>
+            <figure class="hero-photo">
+                <div class="ph">
+                    <img src="store.jpg" alt="Priya Garments showroom in Ganaur, Sonipat" width="800" height="1000"
+                        fetchpriority="high" onerror="this.remove()">
+                    <span>STORE PHOTO</span>
+                </div>
+                <figcaption class="hang-tag"><b>Trusted by 1 Lakh+</b><small>Customers since 2013</small></figcaption>
+            </figure>
+            <div class="eyebrow dark">CLOTHING · ACCESSORIES · ESTD. 2013</div>
             <h1>Priya<br><em>Garments</em></h1>
             <p class="tagline">Quality, style and variety under one roof — a clothing and accessories showroom trusted
                 by 1 Lakh+ customers since 2013.</p>
@@ -50,89 +62,138 @@
                 <div><b>Ganaur, Sonipat</b>Near Batra Clinic, Bega Road, Haryana</div>
             </div>
             <div class="cta-row">
-                <a href="#collections" class="btn" data-open>Explore Collection</a>
-                <a href="#visit" class="btn ghost">Visit Our Store</a>
+                <a href="#collections" class="btn">Explore Collection</a>
+                <a href="#visit" class="btn ghost dark">Visit Our Store</a>
             </div>
         </section>
 
         <section id="about" class="about">
-            <div class="wrap">
-                <div class="eyebrow dark">ABOUT US</div>
-                <h2>An established name in clothing &amp; accessories.</h2>
-                <p>Priya Garments has been serving Ganaur since 2013, bringing together clothing and accessories for the
+    <div class="wrap">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="eyebrow dark reveal">ABOUT US</div>
+                <h2 class="split">An established name in clothing &amp; accessories.</h2>
+                <p class="reveal">Priya Garments has been serving Ganaur since 2013, bringing together clothing and accessories for the
                     whole family under one roof. Over the years we've built a customer base of over 1 Lakh, grounded in
                     a simple focus: quality fabrics, thoughtful variety and a showroom experience where you can see and
                     choose products yourself.</p>
-                <p>From everyday essentials to accessories that complete a look, every collection is chosen with
+                <p class="reveal" style="--d:.12s">From everyday essentials to accessories that complete a look, every collection is chosen with
                     comfort, finish and value in mind.</p>
-                <div class="stat-row">
-                    <div class="stat"><b>2013</b><span>Established</span></div>
-                    <div class="stat"><b>1 Lakh+</b><span>Customers</span></div>
-                    <div class="stat"><b>Men's &amp; Kid's</b><span>Clothing collection</span></div>
-                </div>
             </div>
-        </section>
+            <figure class="about-photo reveal" style="--d:.2s">
+                <div class="ph"><span>STORE PHOTO</span></div>
+                <figcaption class="hang-tag"><b>Since 2013</b><small>Ganaur, Sonipat</small></figcaption>
+            </figure>
+        </div>
+
+        <ul class="labels">
+            <li class="label reveal"><small>FABRIC</small><b>Quality you can feel</b></li>
+            <li class="label reveal" style="--d:.12s"><small>RANGE</small><b>Thoughtful variety</b></li>
+            <li class="label reveal" style="--d:.24s"><small>SHOWROOM</small><b>See &amp; choose yourself</b></li>
+        </ul>
+
+        <div class="stat-row">
+            <div class="stat reveal"><b data-count="2013" data-from="1990">2013</b><span>Established</span></div>
+            <div class="stat reveal" style="--d:.12s"><b data-count="100000" data-final="1 Lakh+">1 Lakh+</b><span>Customers</span></div>
+            <div class="stat reveal" style="--d:.24s"><b>Men's &amp; Kids'</b><span>Clothing collection</span></div>
+        </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="track">
+            <span>SHIRTS ✦ T-SHIRTS ✦ PANTS &amp; TROUSERS ✦ SHOES ✦ ACCESSORIES ✦ </span>
+            <span>SHIRTS ✦ T-SHIRTS ✦ PANTS &amp; TROUSERS ✦ SHOES ✦ ACCESSORIES ✦ </span>
+        </div>
+    </div>
+</section>
 
         <section id="collections" class="collections">
+            <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 3-1.5V21h8V8.5L19 10l2-4-5-3-4 4z"/><path d="M12 7v14"/></symbol><symbol id="i-tee" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 3-1.5V21h8V8.5L19 10l2-4-5-3c-.5 1.2-1.9 2-4 2S8.500 4.200 8 3z"/></symbol><symbol id="i-pants" viewBox="0 0 24 24"><path d="M7 3h10l1 18h-4.500L12 9l-1.500 12H6z"/><path d="M7 7h10"/></symbol><symbol id="i-shoe" viewBox="0 0 24 24"><path d="M2 17v-4l5-1 2 2h3c1 0 2 1 3 1.500l5 1.500c1 .3 2 1 2 2v1H2z"/><path d="M2 19.500h20"/></symbol></svg>
             <div class="wrap">
-                <button class="toggle" id="toggle" aria-expanded="false" aria-controls="panel">
-                    <span><span class="t">Our Collections</span><span class="s">MEN'S &amp; KID'S CLOTHING</span></span>
-                    <i class="chev"></i>
-                </button>
-                <div class="panel" id="panel">
-                    <div class="panel-in">
-                        <div class="slider">
-                            <div class="track" id="track">
-                                <article class="slide">
-                                    <h3>Men's Collection</h3>
-                                    <div class="tiles">
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Shirts</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Pants &amp; Trousers</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>T-Shirts</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Shoes</h4>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="slide">
-                                    <h3>Kids' Collection</h3>
-                                    <div class="tiles">
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Shirts</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Pants &amp; Trousers</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>T-Shirts</h4>
-                                        </div>
-                                        <div class="tile">
-                                            <div class="ph"><span>PHOTO</span></div>
-                                            <h4>Shoes</h4>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="dots" id="dots"><button class="on"
-                                    aria-label="Men's collection"></button><button
-                                    aria-label="Kids' collection"></button></div>
-                            <p class="hint">Swipe left to see Kids' collection</p>
+                <div class="eyebrow">OUR COLLECTIONS</div>
+                <h2>Men's &amp; Kids' Clothing</h2>
+            <div class="coll" data-coll>
+                <h3 class="coll-title">Men's Collection</h3>
+                <div class="tabs" role="tablist" aria-label="Men's Collection categories">
+                    <button class="tab on" role="tab" id="tab-men-shirts" aria-controls="men-shirts" aria-selected="true"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shirt"/></svg></span><span>Shirts</span></button>
+                    <button class="tab" role="tab" id="tab-men-tshirts" aria-controls="men-tshirts" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tee"/></svg></span><span>T-Shirts</span></button>
+                    <button class="tab" role="tab" id="tab-men-pants" aria-controls="men-pants" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pants"/></svg></span><span>Pants &amp; Trousers</span></button>
+                    <button class="tab" role="tab" id="tab-men-shoes" aria-controls="men-shoes" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shoe"/></svg></span><span>Shoes</span></button>
+                </div>
+                    <div class="tpanel" role="tabpanel" id="men-shirts" aria-labelledby="tab-men-shirts">
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
                         </div>
                     </div>
+                    <div class="tpanel" role="tabpanel" id="men-tshirts" aria-labelledby="tab-men-tshirts" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+                    <div class="tpanel" role="tabpanel" id="men-pants" aria-labelledby="tab-men-pants" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+                    <div class="tpanel" role="tabpanel" id="men-shoes" aria-labelledby="tab-men-shoes" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="coll" data-coll>
+                <h3 class="coll-title">Kids' Collection</h3>
+                <div class="tabs" role="tablist" aria-label="Kids' Collection categories">
+                    <button class="tab on" role="tab" id="tab-kids-shirts" aria-controls="kids-shirts" aria-selected="true"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shirt"/></svg></span><span>Shirts</span></button>
+                    <button class="tab" role="tab" id="tab-kids-tshirts" aria-controls="kids-tshirts" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tee"/></svg></span><span>T-Shirts</span></button>
+                    <button class="tab" role="tab" id="tab-kids-pants" aria-controls="kids-pants" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pants"/></svg></span><span>Pants &amp; Trousers</span></button>
+                    <button class="tab" role="tab" id="tab-kids-shoes" aria-controls="kids-shoes" aria-selected="false"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shoe"/></svg></span><span>Shoes</span></button>
                 </div>
+                    <div class="tpanel" role="tabpanel" id="kids-shirts" aria-labelledby="tab-kids-shirts">
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+                    <div class="tpanel" role="tabpanel" id="kids-tshirts" aria-labelledby="tab-kids-tshirts" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+                    <div class="tpanel" role="tabpanel" id="kids-pants" aria-labelledby="tab-kids-pants" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+                    <div class="tpanel" role="tabpanel" id="kids-shoes" aria-labelledby="tab-kids-shoes" hidden>
+                        <div class="tiles">
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                            <div class="tile"><div class="ph"><span>PHOTO</span></div></div>
+                        </div>
+                    </div>
+            </div>
             </div>
         </section>
 
