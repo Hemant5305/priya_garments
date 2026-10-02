@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | Priya Garments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="box">
+    <h1>Priya Garments <small>Photo manager</small></h1>
+    <p id="msg" role="status"></p>
+
+    <form id="loginform" hidden>
+      <label>Email <input id="email" type="email" autocomplete="username" required></label>
+      <label>Password <input id="pass" type="password" autocomplete="current-password" required></label>
+      <button class="btn">Log in</button>
+    </form>
+
+    <section id="panel" hidden>
+      <form id="upform">
+        <label>Where should the photos appear?
+          <select id="cat"></select>
+        </label>
+        <label>Photos
+          <input id="files" type="file" accept="image/*" multiple>
+        </label>
+        <button class="btn" id="upbtn">Upload photos</button>
+      </form>
+      <h2>Photos in this category</h2>
+      <div id="grid" class="grid"></div>
+      <a class="link" href="index.html">Back to website</a>
+      <button class="link" id="logout">Log out</button>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

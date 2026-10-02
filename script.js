@@ -19,11 +19,13 @@
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
 
-  const navLinks = $$('.links a');
+    const navLinks = $$('.links a');
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.isIntersecting) navLinks.forEach((a) =>
-        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      if (!e.isIntersecting) return;
+      const id = e.target.id === 'home' ? 'top' : e.target.id;
+      navLinks.forEach((a) =>
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   [$('.hero'), $('#about'), $('#collections'), $('#visit')].forEach((s) => s && spy.observe(s));
@@ -68,6 +70,27 @@
       });
     });
     select(0);
+  });
+    /* Collections: arrow buttons slide the visible row */
+  $$('[data-coll]').forEach((coll) => {
+    const prev = $('.arrow.prev', coll), next = $('.arrow.next', coll);
+    if (!prev || !next) return;
+    const track = () => $('.tpanel:not([hidden]) .tiles', coll);
+    const sync = () => {
+      const t = track();
+      prev.disabled = t.scrollLeft < 4;
+      next.disabled = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
+    };
+    const go = (dir) => track().scrollBy({ left: dir * track().clientWidth * 0.8, behavior: 'smooth' });
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    $$('.tiles', coll).forEach((t) => t.addEventListener('scroll', sync, { passive: true }));
+    $$('[role="tab"]', coll).forEach((t) => {
+      t.addEventListener('click', sync);
+      t.addEventListener('keyup', sync);
+    });
+    window.addEventListener('resize', sync);
+    sync();
   });
     /* About: split heading into words, reveal on scroll, count up numbers */
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
